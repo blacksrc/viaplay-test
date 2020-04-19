@@ -4,6 +4,7 @@
   "description": "Smart-tv app based on React.js",
   "author": "Siamak A.Motlagh <siamak.aghaeipour@gmail.com> (http://blacksrc.com)",
   "private": true,
+  "proxy": "https://content.viaplay.se/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
