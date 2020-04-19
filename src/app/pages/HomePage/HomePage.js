@@ -5,6 +5,7 @@ import FooterLayout from '../../layouts/FooterLayout';
 import MainLayout from '../../layouts/MainLayout';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import MoviesList from '../../components/MoviesList';
 
 const HomePage = () => {
   return (
@@ -12,7 +13,9 @@ const HomePage = () => {
       <HeaderLayout>
         <Header />
       </HeaderLayout>
-      <MainLayout>content</MainLayout>
+      <MainLayout>
+        <MoviesList />
+      </MainLayout>
       <FooterLayout>
         <Footer />
       </FooterLayout>
