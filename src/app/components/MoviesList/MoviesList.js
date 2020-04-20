@@ -6,13 +6,11 @@ import Spinner from '../Spinner';
 const MoviesList = ({ movie, fetchMoviesStartAsync }) => {
   useEffect(() => {
     fetchMoviesStartAsync();
-  }, []);
+  }, [fetchMoviesStartAsync]);
 
   if (movie.isFetching) {
     return <Spinner />;
   }
-
-  console.log(movie);
 
   return (
     <Container>
