@@ -5,6 +5,7 @@ const Container = styled.li`
   position: relative;
 
   a:focus,
+  a.selected,
   &:hover {
     div {
       opacity: 1;

@@ -4,6 +4,7 @@ import { fetchMoviesStartAsync } from '../../redux/movie/actions';
 
 const mapStateToProps = (state) => ({
   movie: state.movie,
+  navigation: state.navigation,
 });
 
 const mapDispatchToProps = (dispatch) => ({
