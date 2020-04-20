@@ -18,6 +18,11 @@ const movieReducer = (state = INITIAL_STATE, action) => {
         isFetching: false,
         movies: action.payload,
       };
+    case MovieActionTypes.FETCH_MOVIES_FAILURE:
+      return {
+        ...state,
+        isFetching: false,
+      };
     default:
       return state;
   }
