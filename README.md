@@ -119,9 +119,10 @@ $ yarn start
 Things need to be done.
 
 - [x] Localization.
-- [ ] Arrow control functionality.
+- [x] Arrow control functionality.
+- [ ] Enter and Return functionality.
 - [ ] Create component visual documentation (Storybook).
-- [ ] Unit test.
-- [ ] e2e test (Cypress).
+- [ ] Unit tests.
+- [ ] e2e tests (Cypress).
 - [ ] Review inline code comments.
 - [ ] Dockerizing.
