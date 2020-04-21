@@ -10,10 +10,28 @@ const MoviesList = ({ movie, fetchMoviesStartAsync, navigation }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    // Calculate each how many items exists in each row to handle up and down arrow
     const itemsPerRow = getItemsPerRow(containerRef.current.offsetWidth, itemWidth);
-    setSelectedIndex((perviousValue) =>
-      getNextSelectedIndex(navigation.direction, movie.movies.length, itemsPerRow, perviousValue)
-    );
+    setSelectedIndex((perviousIndex) => {
+      const newIndex = getNextSelectedIndex(
+        navigation.direction,
+        movie.movies.length,
+        itemsPerRow,
+        perviousIndex
+      );
+
+      // TODO: Redirection need to be implemented here using react router.
+      if (navigation.direction === 'enter') {
+        console.log('Route to movie with this guid: ' + movie.movies[newIndex].system.guid);
+      }
+
+      // TODO: This will be implemented on view movie page to go back to home page.
+      if (navigation.direction === 'exit') {
+        console.log('Back to all movies');
+      }
+
+      return newIndex;
+    });
   }, [navigation, movie.movies, itemWidth]);
 
   useEffect(() => {

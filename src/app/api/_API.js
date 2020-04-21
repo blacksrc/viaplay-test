@@ -36,7 +36,7 @@ export default class API {
       })
       .catch((error) => {
         return {
-          code: 4, // result.code only appears on error apparently (need API documentation)
+          code: 999, // result.code only appears on error apparently (need API documentation)
           error,
         };
       });
