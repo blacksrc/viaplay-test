@@ -2,16 +2,23 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Image, Detail, ImageLink } from './assets/styles';
 
-const MovieItem = ({ image, name, year, i, selected, setMovieWidth }) => {
+const MovieItem = ({ image, name, year, i, selectedIndex, setMovieWidth }) => {
   const itemRef = useRef(null);
 
   useEffect(() => {
-    setMovieWidth(itemRef.current.offsetWidth);
-  }, []);
+    /**
+     * To see why it's necessary to define setWidth function check the documentation:
+     * https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies
+     */
+    const setWidth = () => {
+      setMovieWidth(itemRef.current.offsetWidth);
+    };
+    setWidth();
+  }, [setMovieWidth]);
 
   return (
     <Container ref={itemRef}>
-      <ImageLink href={`#${name}`} className={i === selected ? 'selected' : ''}>
+      <ImageLink href={`#${name}`} className={i === selectedIndex ? 'selected' : ''}>
         <Detail>
           <h2>{name}</h2>
           <span>({year})</span>
