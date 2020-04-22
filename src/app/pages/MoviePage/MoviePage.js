@@ -5,16 +5,16 @@ import FooterLayout from '../../layouts/FooterLayout';
 import MainLayout from '../../layouts/MainLayout';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import MoviesList from '../../components/MoviesList';
+import MovieView from '../../components/MovieView';
 
-const HomePage = () => {
+const MoviePage = () => {
   return (
     <Container>
       <HeaderLayout>
         <Header />
       </HeaderLayout>
       <MainLayout>
-        <MoviesList />
+        <MovieView />
       </MainLayout>
       <FooterLayout>
         <Footer />
@@ -23,4 +23,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default MoviePage;

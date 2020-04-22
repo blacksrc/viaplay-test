@@ -4,6 +4,7 @@
   "description": "Smart-tv app based on React.js",
   "author": "Siamak A.Motlagh <siamak.aghaeipour@gmail.com> (http://blacksrc.com)",
   "private": true,
+  "proxy": "https://content.viaplay.se/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -23,7 +24,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.3.4",
-    "react-scripts": "3.4.1"
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "husky": "^4.2.5",
