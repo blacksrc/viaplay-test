@@ -29,7 +29,8 @@ const MoviesList = ({ movie, fetchMoviesStartAsync, navigation, setDirection }) 
 
       // TODO: Redirection need to be implemented here using react router.
       if (navigation.direction === 'enter') {
-        history.push(`/${movie.movies[newIndex].system.guid}`);
+        // This is needed to prevent react update during an existing state transition warning
+        setTimeout(() => history.push(`/${movie.movies[newIndex].system.guid}`), 0);
       }
 
       return newIndex;
