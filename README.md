@@ -54,6 +54,14 @@ REACT_APP_API_MARKET=se
 $ yarn start
 ```
 
+## Test
+
+To run all test cases.
+
+```sh
+$ yarn test
+```
+
 ## Project's structure
 
 `src` directory contains some important sub directories which is explained below the tree view:
@@ -122,7 +130,7 @@ Things need to be done.
 - [x] Arrow control functionality.
 - [x] Enter and Return functionality.
 - [ ] Create component visual documentation (Storybook).
-- [ ] Unit tests.
+- [x] Unit tests.
 - [ ] e2e tests (Cypress).
 - [x] Review inline code comments.
 - [ ] Dockerizing.
