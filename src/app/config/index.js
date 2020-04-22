@@ -10,8 +10,9 @@ const keyCodeActions = {
   38: 'up',
   39: 'right',
   40: 'down',
-  13: 'enter', // Redirection is not implemented. Check the console
-  27: 'exit', // Return is not implemented. Check the console
+  13: 'enter',
+  27: 'exit',
+  8: 'exit',
 };
 
 export { api, keyCodeActions };

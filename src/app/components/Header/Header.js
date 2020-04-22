@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import locales from '../../locales';
 import { Container, Logo, LanguageContainer, Language } from './assets/styles';
 import { getAllLanguages, formatLanguageName } from '../../utils';
@@ -19,7 +20,9 @@ const Header = () => {
 
   return (
     <Container>
-      <Logo src={LogoSrc} alt={t('title')} title={t('title')} />
+      <Link to="/">
+        <Logo src={LogoSrc} alt={t('title')} title={t('title')} />
+      </Link>
       <LanguageContainer>
         {languages.map((language) => (
           <Language key={language}>

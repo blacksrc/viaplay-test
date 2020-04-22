@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Container, Image, Detail, ImageLink } from './assets/styles';
+import { Container, Image, Detail } from './assets/styles';
 
-const MovieItem = ({ image, name, year, i, selectedIndex, setMovieWidth }) => {
+const MovieItem = ({ image, name, year, i, id, selectedIndex, setMovieWidth }) => {
   const itemRef = useRef(null);
 
   useEffect(() => {
@@ -18,13 +19,13 @@ const MovieItem = ({ image, name, year, i, selectedIndex, setMovieWidth }) => {
 
   return (
     <Container ref={itemRef}>
-      <ImageLink href={`#${name}`} className={i === selectedIndex ? 'selected' : ''}>
+      <Link to={`${id}`} className={i === selectedIndex ? 'selected' : ''}>
         <Detail>
           <h2>{name}</h2>
           <span>({year})</span>
         </Detail>
         <Image src={image} />
-      </ImageLink>
+      </Link>
     </Container>
   );
 };

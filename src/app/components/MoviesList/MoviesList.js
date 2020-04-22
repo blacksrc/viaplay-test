@@ -1,17 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { getItemsPerRow, getNextSelectedIndex } from '../../utils';
 import { Container } from './assets/styles';
 import MovieItem from '../MovieItem';
 import Spinner from '../Spinner';
 
-const MoviesList = ({ movie, fetchMoviesStartAsync, navigation }) => {
+const MoviesList = ({ movie, fetchMoviesStartAsync, navigation, setDirection }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [itemWidth, setItemWidth] = useState(0);
   const containerRef = useRef(null);
+  const history = useHistory();
+
+  // To fix browser back button issue
+  useEffect(() => {
+    setDirection('');
+  }, [setDirection]);
 
   useEffect(() => {
     // Calculate each how many items exists in each row to handle up and down arrow
-    const itemsPerRow = getItemsPerRow(containerRef.current.offsetWidth, itemWidth);
+    const itemsPerRow = getItemsPerRow(containerRef.current?.offsetWidth, itemWidth);
     setSelectedIndex((perviousIndex) => {
       const newIndex = getNextSelectedIndex(
         navigation.direction,
@@ -22,21 +29,18 @@ const MoviesList = ({ movie, fetchMoviesStartAsync, navigation }) => {
 
       // TODO: Redirection need to be implemented here using react router.
       if (navigation.direction === 'enter') {
-        console.log('Route to movie with this guid: ' + movie.movies[newIndex].system.guid);
-      }
-
-      // TODO: This will be implemented on view movie page to go back to home page.
-      if (navigation.direction === 'exit') {
-        console.log('Back to all movies');
+        history.push(`/${movie.movies[newIndex].system.guid}`);
       }
 
       return newIndex;
     });
-  }, [navigation, movie.movies, itemWidth]);
+  }, [navigation, movie.movies, itemWidth, history]);
 
   useEffect(() => {
-    fetchMoviesStartAsync();
-  }, [fetchMoviesStartAsync]);
+    if (movie.movies.length === 0) {
+      fetchMoviesStartAsync();
+    }
+  }, [fetchMoviesStartAsync, movie.movies]);
 
   if (movie.isFetching) {
     return <Spinner />;
@@ -50,6 +54,7 @@ const MoviesList = ({ movie, fetchMoviesStartAsync, navigation }) => {
             i={key}
             selectedIndex={selectedIndex}
             key={movieItem.system.guid}
+            id={movieItem.system.guid}
             image={movieItem.content.images.landscape.url}
             name={movieItem.content.series.title}
             year={movieItem.content.production.year}

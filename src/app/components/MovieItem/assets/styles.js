@@ -13,10 +13,6 @@ const Container = styled.li`
   }
 `;
 
-const ImageLink = styled.a`
-  display: block;
-`;
-
 const Image = styled.img`
   display: block;
   width: 100%;
@@ -36,4 +32,4 @@ const Detail = styled.div`
   opacity: 0;
 `;
 
-export { Container, ImageLink, Image, Detail };
+export { Container, Image, Detail };
