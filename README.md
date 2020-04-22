@@ -120,7 +120,7 @@ Things need to be done.
 
 - [x] Localization.
 - [x] Arrow control functionality.
-- [ ] Enter and Return functionality.
+- [x] Enter and Return functionality.
 - [ ] Create component visual documentation (Storybook).
 - [ ] Unit tests.
 - [ ] e2e tests (Cypress).
