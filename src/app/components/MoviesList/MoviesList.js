@@ -37,6 +37,7 @@ const MoviesList = ({ movie, fetchMoviesStartAsync, navigation, setDirection }) 
   }, [navigation, movie.movies, itemWidth, history]);
 
   useEffect(() => {
+    // to handle returning back. Need to update redux store as we are not persisting it in local storage
     if (movie.movies.length === 0) {
       fetchMoviesStartAsync();
     }

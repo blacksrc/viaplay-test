@@ -124,5 +124,5 @@ Things need to be done.
 - [ ] Create component visual documentation (Storybook).
 - [ ] Unit tests.
 - [ ] e2e tests (Cypress).
-- [ ] Review inline code comments.
+- [x] Review inline code comments.
 - [ ] Dockerizing.

@@ -8,6 +8,7 @@ import MoviePage from './pages/MoviePage';
 import { setDirection } from './redux/navigation/actions';
 
 function App({ setDirection }) {
+  // To detect pressed key on keyboard
   document.addEventListener('keydown', (e) => {
     setDirection(keyCodeActions[e.keyCode] || '');
   });

@@ -17,6 +17,7 @@ const MovieView = ({ setDirection, movie, navigation }) => {
     }
   }, [navigation.direction, history]);
 
+  // To get current movie from movies list in order to show. Check out the test message inside component.
   const thisMovie =
     movie.movies.filter((movieItem) => `/${movieItem.system.guid}` === location.pathname) || [];
 

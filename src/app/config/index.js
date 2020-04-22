@@ -5,6 +5,7 @@ const api = {
   MARKET: process.env.REACT_APP_API_MARKET,
 };
 
+// keCodes to handle arrow and Enter and Return functionality. Feel free to add more and implement more functionalities
 const keyCodeActions = {
   37: 'left',
   38: 'up',
